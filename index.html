@@ -419,7 +419,62 @@
       font-size: 14px;
     }
 
-        /* TESTIMONIALS */
+        /* FAQ */
+
+    .faq {
+      background: #f7f9fc;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .faq-container details {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      padding: 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    }
+
+    .faq-container summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 20px 24px;
+      color: #073b7a;
+      font-size: 17px;
+      font-weight: bold;
+      position: relative;
+      padding-right: 50px;
+    }
+
+    .faq-container summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-container summary::after {
+      content: "+";
+      position: absolute;
+      right: 24px;
+      top: 16px;
+      font-size: 25px;
+      color: #f6c344;
+      font-weight: bold;
+    }
+
+    .faq-container details[open] summary::after {
+      content: "−";
+    }
+
+    .faq-container details p {
+      padding: 0 24px 20px;
+      color: #6b7280;
+      font-size: 15px;
+      line-height: 1.7;
+    }    
+    /* TESTIMONIALS */
 
     .testimonials {
       background: #ffffff;
@@ -597,6 +652,7 @@
       <a href="#how">How It Works</a>
       <a href="#curricula">Curricula</a>
       <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -1009,6 +1065,86 @@
       <h3>Parent / Student</h3>
       <span>Dar es Salaam</span>
     </div>
+
+  </div>
+
+</section>
+  <!-- FAQ -->
+
+<section class="faq" id="faq">
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <p class="section-intro">
+    Find answers to some of the questions parents commonly ask about our tutoring services.
+  </p>
+
+  <div class="faq-container">
+
+    <details>
+      <summary>Do you provide home tuition?</summary>
+      <p>
+        Yes. Dar Home Tutors connects students with tutors who can provide
+        personalised tuition at home, subject to tutor availability and location.
+      </p>
+    </details>
+
+    <details>
+      <summary>Do you provide online tuition?</summary>
+      <p>
+        Yes. We provide live online tuition for students who prefer remote
+        learning or require additional academic support.
+      </p>
+    </details>
+
+    <details>
+      <summary>Which grades do you cover?</summary>
+      <p>
+        We support students from Grades 1–12. Our services include primary,
+        lower secondary, secondary, IGCSE and advanced-level support.
+      </p>
+    </details>
+
+    <details>
+      <summary>Which curricula do you support?</summary>
+      <p>
+        We support Cambridge, IGCSE, IB MYP, IBDP, NECTA and NCERT curricula.
+      </p>
+    </details>
+
+    <details>
+      <summary>How much does tuition cost?</summary>
+      <p>
+        Our standard hourly rates range from TSh 25,000 to TSh 50,000,
+        depending on the student's grade. Please visit our Tuition Fees
+        section for the current rates.
+      </p>
+    </details>
+
+    <details>
+      <summary>How do I request a tutor?</summary>
+      <p>
+        You can use our Request a Tutor form on the website. Submit the
+        student's details and requirements, and your enquiry will be sent
+        directly to us through WhatsApp.
+      </p>
+    </details>
+
+    <details>
+      <summary>Can I request a particular subject?</summary>
+      <p>
+        Yes. You can specify the subject you need when submitting a tutor
+        request, and we will work to identify a suitable tutor.
+      </p>
+    </details>
+
+    <details>
+      <summary>How do I contact Dar Home Tutors?</summary>
+      <p>
+        You can contact us through WhatsApp or phone using the contact
+        details provided on this website.
+      </p>
+    </details>
 
   </div>
 
