@@ -3,88 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dar Home Tutors | Quality Tuition in Tanzania</title>
+
+    <title>Dar Home Tutors | Home & Online Tuition in Tanzania</title>
+
+    <meta name="description" content="Dar Home Tutors provides quality home and online tuition for students in Tanzania, covering Primary, Secondary, IGCSE, Cambridge, IB, CBSE and NECTA curricula.">
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1f2937;
+            background: #ffffff;
             line-height: 1.6;
-            color: #222;
-            background: #f7f9fc;
         }
 
+        /* HEADER */
+
         header {
-            background: #0b3d91;
+            background: #073b7a;
             color: white;
-            padding: 20px 8%;
+            padding: 18px 7%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 26px;
+            font-size: 25px;
             font-weight: bold;
+        }
+
+        .logo span {
+            color: #f6c344;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            font-weight: 500;
         }
 
+        nav a:hover {
+            color: #f6c344;
+        }
+
+        /* HERO */
+
         .hero {
-            background: linear-gradient(rgba(11,61,145,0.85), rgba(11,61,145,0.85)),
-                        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80");
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(rgba(7,59,122,0.86), rgba(7,59,122,0.86)),
+                url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=80");
+
             background-size: cover;
             background-position: center;
             color: white;
-            text-align: center;
-            padding: 100px 20px;
+            padding: 80px 7%;
+        }
+
+        .hero-content {
+            max-width: 850px;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 54px;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #f6c344;
         }
 
         .hero p {
-            font-size: 21px;
-            max-width: 750px;
-            margin: auto;
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 30px;
         }
 
-        .button {
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
             display: inline-block;
-            background: #f5b400;
-            color: #111;
-            padding: 13px 25px;
-            margin-top: 25px;
+            padding: 14px 25px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
         }
 
+        .btn-primary {
+            background: #f6c344;
+            color: #111827;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        /* GENERAL */
+
         section {
-            padding: 60px 8%;
+            padding: 75px 7%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 35px;
-            color: #0b3d91;
-            font-size: 32px;
+            color: #073b7a;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+            color: #6b7280;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #f7f9fc;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 25px;
         }
 
@@ -92,55 +160,206 @@
             background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
-            color: #0b3d91;
+            color: #073b7a;
             margin-bottom: 10px;
+            font-size: 21px;
         }
 
-        .about {
-            background: white;
-            text-align: center;
+        .card p {
+            color: #6b7280;
         }
 
-        .about p {
-            max-width: 850px;
+        /* ABOUT */
+
+        .about-container {
+            max-width: 1000px;
             margin: auto;
-            font-size: 18px;
-        }
-
-        .contact {
-            background: #0b3d91;
-            color: white;
             text-align: center;
         }
 
-        .contact h2 {
+        .about-container p {
+            font-size: 18px;
             margin-bottom: 20px;
         }
 
-        footer {
-            background: #082b66;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        /* HOW IT WORKS */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
         }
 
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #073b7a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            color: #073b7a;
+            margin-bottom: 8px;
+        }
+
+        /* CURRICULA */
+
+        .curricula {
+            background: #f7f9fc;
+        }
+
+        .curriculum-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .curriculum {
+            background: white;
+            border: 1px solid #e5e7eb;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            color: #073b7a;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #073b7a;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            font-size: 18px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            font-size: 18px;
+        }
+
+        .contact-info p {
+            margin: 10px;
+        }
+
+        .contact-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .call {
+            background: #073b7a;
+            color: white;
+        }
+
+        .whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #052b59;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* MOBILE */
+
         @media (max-width: 700px) {
+
             header {
                 flex-direction: column;
                 gap: 15px;
             }
 
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
             nav a {
-                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 550px;
+                padding: 60px 6%;
             }
 
             .hero h1 {
-                font-size: 36px;
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
             }
         }
     </style>
@@ -148,110 +367,333 @@
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-    <div class="logo">Dar Home Tutors</div>
+
+    <div class="logo">
+        Dar Home <span>Tutors</span>
+    </div>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
+        <a href="#how">How It Works</a>
         <a href="#contact">Contact</a>
     </nav>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero" id="home">
-    <h1>Quality Tuition at Your Doorstep</h1>
 
-    <p>
-        Professional home and online tutoring for students in Tanzania,
-        from primary level to advanced secondary education.
-    </p>
+    <div class="hero-content">
 
-    <a href="#contact" class="button">Book a Tutor</a>
+        <h1>
+            Quality <span>Tuition</span><br>
+            At Your Doorstep
+        </h1>
+
+        <p>
+            Dar Home Tutors connects students and families with
+            dedicated tutors for personalised home and online tuition
+            across Tanzania.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#contact" class="btn btn-primary">
+                Find a Tutor
+            </a>
+
+            <a href="https://wa.me/255760959542"
+               class="btn btn-secondary">
+                WhatsApp Us
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section id="services">
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
     <h2 class="section-title">Our Services</h2>
+
+    <p class="section-intro">
+        Flexible tuition designed around the student's level,
+        curriculum, learning needs and goals.
+    </p>
 
     <div class="cards">
 
         <div class="card">
-            <h3>Primary Education</h3>
+            <div class="card-icon">📚</div>
+            <h3>Primary Tuition</h3>
             <p>
-                Quality support for students in Grades 1–5 across
+                Academic support for Grades 1–5 across
                 all major subjects.
             </p>
         </div>
 
         <div class="card">
-            <h3>Secondary Education</h3>
+            <div class="card-icon">📐</div>
+            <h3>Lower Secondary</h3>
             <p>
-                Tuition for Grades 6–10, including Mathematics,
-                Sciences, Languages and other subjects.
+                Tuition for Grades 6–8 with focused support
+                in key subjects.
             </p>
         </div>
 
         <div class="card">
+            <div class="card-icon">🎓</div>
+            <h3>IGCSE & Secondary</h3>
+            <p>
+                Structured support for Grades 9–10 and
+                IGCSE students.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🧮</div>
             <h3>Advanced Level</h3>
             <p>
-                Mathematics, Accounting and Economics support
+                Mathematics, Accounting and Economics
                 for Form 5–6 students.
             </p>
         </div>
 
         <div class="card">
-            <h3>International Curricula</h3>
-            <p>
-                Support for IGCSE, Cambridge, IB, CBSE and
-                NECTA programmes.
-            </p>
-        </div>
-
-        <div class="card">
+            <div class="card-icon">💻</div>
             <h3>Online Tuition</h3>
             <p>
-                Live online lessons, weekly tests and targeted
-                support for students who need extra help.
+                Live online lessons, weekly tests and
+                targeted academic support.
             </p>
         </div>
 
         <div class="card">
+            <div class="card-icon">🗣️</div>
             <h3>Spoken English</h3>
             <p>
-                Improve communication, confidence, pronunciation
-                and personality development.
+                Build communication skills, confidence,
+                pronunciation and personality development.
             </p>
         </div>
 
     </div>
+
 </section>
 
-<section class="about" id="about">
-    <h2 class="section-title">About Dar Home Tutors</h2>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="about-container">
+
+        <h2 class="section-title">About Dar Home Tutors</h2>
+
+        <p class="section-intro">
+            More than just tuition — we help students build
+            understanding, confidence and better learning habits.
+        </p>
+
+        <p>
+            Dar Home Tutors is a Tanzania-based tutoring organisation
+            connecting students with dedicated tutors for personalised
+            academic support.
+        </p>
+
+        <p>
+            We provide both home and online tuition, matching students
+            with tutors according to their academic level, subjects,
+            curriculum and learning requirements.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="services" id="how">
+
+    <h2 class="section-title">How It Works</h2>
+
+    <p class="section-intro">
+        Getting started is simple.
+    </p>
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">1</div>
+
+            <h3>Contact Us</h3>
+
+            <p>
+                Tell us about the student, subjects,
+                curriculum and location.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">2</div>
+
+            <h3>We Find a Tutor</h3>
+
+            <p>
+                We identify a suitable tutor based on
+                the student's requirements.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">3</div>
+
+            <h3>Start Learning</h3>
+
+            <p>
+                The student begins personalised home
+                or online tuition.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">4</div>
+
+            <h3>Track Progress</h3>
+
+            <p>
+                We support continuous learning and
+                follow-up on the student's progress.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CURRICULA -->
+
+<section class="curricula">
+
+    <h2 class="section-title">Curricula We Support</h2>
+
+    <p class="section-intro">
+        Tuition support for a range of national and international
+        education programmes.
+    </p>
+
+    <div class="curriculum-list">
+
+        <div class="curriculum">NECTA</div>
+
+        <div class="curriculum">IGCSE</div>
+
+        <div class="curriculum">Cambridge</div>
+
+        <div class="curriculum">IB</div>
+
+        <div class="curriculum">CBSE</div>
+
+        <div class="curriculum">International Curricula</div>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+
+    <h2>Give Your Child the Support They Need</h2>
 
     <p>
-        Dar Home Tutors connects students and families with dedicated
-        tutors for personalised academic support. We provide flexible
-        home and online tuition designed around each student's learning
-        needs, level and curriculum.
+        Whether you need home tuition or online learning support,
+        Dar Home Tutors can help you find the right academic support.
     </p>
+
+    <a href="#contact" class="btn btn-primary">
+        Contact Dar Home Tutors
+    </a>
+
 </section>
+
+
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
-    <h2>Ready to Find a Tutor?</h2>
 
-    <p>
-        Contact Dar Home Tutors today and let us help your child
-        achieve their academic goals.
+    <h2 class="section-title">Contact Us</h2>
+
+    <p class="section-intro">
+        Speak to us about your child's tuition requirements.
     </p>
 
-    <a href="tel:+255760959542" class="button">
-        Call Us
-    </a>
+    <div class="contact-info">
+
+        <p><strong>Dar Home Tutors</strong></p>
+
+        <p>📞 +255 760 959 542</p>
+
+        <p>📞 +255 776 949 542</p>
+
+        <p>📍 Tanzania</p>
+
+    </div>
+
+    <div class="contact-buttons">
+
+        <a href="tel:+255760959542"
+           class="btn call">
+            Call Us
+        </a>
+
+        <a href="https://wa.me/255760959542"
+           class="btn whatsapp">
+            WhatsApp Us
+        </a>
+
+    </div>
+
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
-    <p>© 2026 Dar Home Tutors. All Rights Reserved.</p>
+
+    <p>
+        © 2026 Dar Home Tutors. All Rights Reserved.
+    </p>
+
+    <p>
+        Home Tuition • Online Tuition • Academic Support
+    </p>
+
 </footer>
 
 </body>
