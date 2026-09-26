@@ -419,6 +419,68 @@
       font-size: 14px;
     }
 
+        /* REQUEST A TUTOR */
+
+    .request {
+      background: #f7f9fc;
+    }
+
+    .request-form {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 14px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #073b7a;
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      outline: none;
+      background: white;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #073b7a;
+      box-shadow: 0 0 0 2px rgba(7,59,122,0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .request-form .full-width.btn {
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
     /* MOBILE */
 
     @media (max-width: 768px) {
@@ -481,6 +543,7 @@
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#fees">Fees</a>
+      <a href="#request">Request a Tutor</a>
       <a href="#about">About</a>
       <a href="#how">How It Works</a>
       <a href="#curricula">Curricula</a>
@@ -863,6 +926,122 @@
   </section>
 
 
+  <!-- REQUEST A TUTOR -->
+
+<section class="request" id="request">
+
+  <h2 class="section-title">Request a Tutor</h2>
+
+  <p class="section-intro">
+    Tell us what your child needs and we will help connect you with a suitable tutor.
+  </p>
+
+  <div class="request-form">
+
+    <div class="form-group">
+      <label for="parentName">Parent / Guardian Name</label>
+      <input type="text" id="parentName" placeholder="Enter your name">
+    </div>
+
+    <div class="form-group">
+      <label for="studentName">Student Name</label>
+      <input type="text" id="studentName" placeholder="Enter student's name">
+    </div>
+
+    <div class="form-group">
+      <label for="grade">Grade / Class</label>
+      <input type="text" id="grade" placeholder="e.g. Grade 8, Year 10">
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject Needed</label>
+      <input type="text" id="subject" placeholder="e.g. Mathematics">
+    </div>
+
+    <div class="form-group">
+      <label for="curriculum">Curriculum</label>
+      <select id="curriculum">
+        <option value="">Select curriculum</option>
+        <option>Cambridge</option>
+        <option>IGCSE</option>
+        <option>IB MYP</option>
+        <option>IBDP</option>
+        <option>NECTA</option>
+        <option>NCERT</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="mode">Tuition Mode</label>
+      <select id="mode">
+        <option value="">Select tuition mode</option>
+        <option>Home Tuition</option>
+        <option>Online Tuition</option>
+        <option>Either</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" id="location" placeholder="e.g. Mikocheni, Masaki">
+    </div>
+
+    <div class="form-group">
+      <label for="schedule">Preferred Days / Time</label>
+      <input type="text" id="schedule" placeholder="e.g. Mon & Wed, 5–7 pm">
+    </div>
+
+    <div class="form-group full-width">
+      <label for="message">Additional Information</label>
+      <textarea id="message" rows="4" placeholder="Tell us anything else we should know..."></textarea>
+    </div>
+
+    <button type="button" class="btn whatsapp full-width" onclick="sendTutorRequest()">
+      Send Tutor Request on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
+<script>
+function sendTutorRequest() {
+
+  const parentName = document.getElementById("parentName").value;
+  const studentName = document.getElementById("studentName").value;
+  const grade = document.getElementById("grade").value;
+  const subject = document.getElementById("subject").value;
+  const curriculum = document.getElementById("curriculum").value;
+  const mode = document.getElementById("mode").value;
+  const location = document.getElementById("location").value;
+  const schedule = document.getElementById("schedule").value;
+  const message = document.getElementById("message").value;
+
+  if (!parentName || !studentName || !grade || !subject) {
+    alert("Please fill in the Parent/Guardian Name, Student Name, Grade/Class and Subject.");
+    return;
+  }
+
+  const whatsappMessage =
+    "Hello Dar Home Tutors,%0A%0A" +
+    "*NEW TUTOR REQUEST*%0A%0A" +
+    "*Parent/Guardian:* " + encodeURIComponent(parentName) + "%0A" +
+    "*Student:* " + encodeURIComponent(studentName) + "%0A" +
+    "*Grade/Class:* " + encodeURIComponent(grade) + "%0A" +
+    "*Subject:* " + encodeURIComponent(subject) + "%0A" +
+    "*Curriculum:* " + encodeURIComponent(curriculum) + "%0A" +
+    "*Tuition Mode:* " + encodeURIComponent(mode) + "%0A" +
+    "*Location:* " + encodeURIComponent(location) + "%0A" +
+    "*Preferred Schedule:* " + encodeURIComponent(schedule) + "%0A" +
+    "*Additional Information:* " + encodeURIComponent(message);
+
+  window.open(
+    "https://wa.me/255760959542?text=" + whatsappMessage,
+    "_blank"
+  );
+}
+</script>
   <!-- CONTACT -->
 
   <section class="contact" id="contact">
